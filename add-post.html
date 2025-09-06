@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="knodejs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KnodeJS Fórum - Novo Post</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div class="logo">KN</div>
+            <h1><a href="index.html">KnodeJS Fórum</a></h1>
+        </div>
+        <nav class="main-nav">
+            <a href="add-post.html" class="nav-button">+ Post</a>
+            <a href="about.html" class="nav-link">Sobre</a>
+            <div class="theme-switcher">
+                <label for="theme-select">Tema:</label>
+                <select id="theme-select">
+                    <option value="knodejs">KnodeJS</option>
+                    <option value="light">Claro</option>
+                    <option value="dracula">Dracula</option>
+                    <option value="solarized">Solarized</option>
+                    <option value="oceanic">Oceânico</option>
+                </select>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="new-post-section">
+            <h2>Criar Nova Publicação</h2>
+            <form id="new-post-form">
+                <div class="form-group">
+                    <label for="post-author">Seu Nome</label>
+                    <input type="text" id="post-author" placeholder="Ex: João Programador" required>
+                </div>
+                <div class="form-group">
+                    <label for="post-title">Título</label>
+                    <input type="text" id="post-title" placeholder="Como centralizar uma div?" required>
+                </div>
+                <div class="form-group">
+                    <label for="post-content">Sua Mensagem</label>
+                    <textarea id="post-content" rows="8" placeholder="Estou com dificuldades em CSS para..." required></textarea>
+                </div>
+                <button type="submit">Publicar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 KnodeJS Fórum. Construído para a comunidade.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

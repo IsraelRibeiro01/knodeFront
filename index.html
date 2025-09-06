@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="knodejs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KnodeJS Fórum - Início</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div class="logo">KN</div>
+            <h1><a href="index.html">KnodeJS Fórum</a></h1>
+        </div>
+        <nav class="main-nav">
+            <a href="add-post.html" class="nav-button">+ Post</a>
+            <a href="about.html" class="nav-link">Sobre</a>
+            <div class="theme-switcher">
+                <label for="theme-select">Tema:</label>
+                <select id="theme-select">
+                    <option value="knodejs">KnodeJS</option>
+                    <option value="light">Claro</option>
+                    <option value="dracula">Dracula</option>
+                    <option value="solarized">Solarized</option>
+                    <option value="oceanic">Oceânico</option>
+                </select>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="posts-section">
+            <h2>Publicações Recentes</h2>
+            <div id="posts-container">
+                <!-- Posts de Mockup sobre Node.js -->
+                <article class="post">
+                    <div class="post-header">
+                        <h3>O que é o Event Loop do Node.js?</h3>
+                        <span class="post-author">por CuriosoDoCallback</span>
+                    </div>
+                    <p class="post-body">
+                        Sempre ouço falar que o Node.js é "single-threaded" mas lida com muitas conexões por causa do Event Loop. Alguém pode me explicar de forma simples como ele funciona e por que não bloqueia?
+                    </p>
+                    <div class="post-footer">
+                        <span class="post-date">06 de Setembro de 2025</span>
+                    </div>
+                </article>
+
+                <article class="post">
+                    <div class="post-header">
+                        <h3>Express.js vs. Fastify: Qual usar em 2025?</h3>
+                        <span class="post-author">por ArquitetoDeAPI</span>
+                    </div>
+                    <p class="post-body">
+                        Estou começando um novo projeto de API e estou em dúvida entre usar o bom e velho Express ou o mais moderno Fastify, que promete mais performance. Quais são os prós e contras de cada um na prática?
+                    </p>
+                    <div class="post-footer">
+                        <span class="post-date">06 de Setembro de 2025</span>
+                    </div>
+                </article>
+
+                <article class="post">
+                    <div class="post-header">
+                        <h3>Dica: Usando o módulo `fs` para ler arquivos</h3>
+                        <span class="post-author">por MestreDosArquivos</span>
+                    </div>
+                    <p class="post-body">
+                        Para quem não sabe, o Node.js tem um módulo nativo chamado `fs` (File System) que é extremamente poderoso. Um exemplo simples para ler um arquivo de texto de forma assíncrona é: `fs.readFile('meuarquivo.txt', 'utf8', (err, data) => { ... });`
+                    </p>
+                    <div class="post-footer">
+                        <span class="post-date">05 de Setembro de 2025</span>
+                    </div>
+                </article>
+
+                 <article class="post">
+                    <div class="post-header">
+                        <h3>Como gerenciar variáveis de ambiente com `dotenv`</h3>
+                        <span class="post-author">por SegurancaEmPrimeiro</span>
+                    </div>
+                    <p class="post-body">
+                        Uma dica de segurança essencial: nunca coloque senhas ou chaves de API direto no código! Usem um arquivo `.env` e o pacote `dotenv` para carregar essas variáveis no seu ambiente. É super simples de configurar: `require('dotenv').config()`
+                    </p>
+                    <div class="post-footer">
+                        <span class="post-date">04 de Setembro de 2025</span>
+                    </div>
+                </article>
+
+                <article class="post">
+                    <div class="post-header">
+                        <h3>Dúvida sobre JavaScript Assíncrono</h3>
+                        <span class="post-author">por Ana Dev</span>
+                    </div>
+                    <p class="post-body">
+                        Olá, pessoal! Alguém poderia me explicar a diferença entre `async/await` e `.then()` com exemplos práticos? 
+                        Estou começando e gostaria de entender quando usar cada um.
+                    </p>
+                    <div class="post-footer">
+                        <span class="post-date">03 de Setembro de 2025</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 KnodeJS Fórum. Construído para a comunidade.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

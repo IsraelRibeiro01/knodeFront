@@ -1,0 +1,304 @@
+/* --- Reset Básico e Estilos Globais --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    line-height: 1.6;
+}
+
+/* --- Definição dos Temas com Variáveis CSS --- */
+:root,
+[data-theme='knodejs'] {
+    --bg-color: #222;
+    --text-color: #eee;
+    --primary-color: #556B2F; /* Verde Oliva Escuro */
+    --surface-color: #333;
+    --border-color: #444;
+    --link-color: #8CC84B;
+}
+
+[data-theme='light'] {
+    --bg-color: #f4f4f4;
+    --text-color: #111;
+    --primary-color: #333;
+    --surface-color: #fff;
+    --border-color: #ddd;
+    --link-color: #007BFF;
+}
+
+[data-theme='dracula'] {
+    --bg-color: #282a36;
+    --text-color: #f8f8f2;
+    --primary-color: #bd93f9;
+    --surface-color: #44475a;
+    --border-color: #6272a4;
+    --link-color: #8be9fd;
+}
+
+[data-theme='solarized'] {
+    --bg-color: #002b36;
+    --text-color: #839496;
+    --primary-color: #268bd2;
+    --surface-color: #073642;
+    --border-color: #586e75;
+    --link-color: #2aa198;
+}
+
+[data-theme='oceanic'] {
+    --bg-color: #0f1c2e;
+    --text-color: #c0c5ce;
+    --primary-color: #5abeb0;
+    --surface-color: #1b2b40;
+    --border-color: #344a64;
+    --link-color: #89ddff;
+}
+
+/* --- Aplicando as Variáveis --- */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* --- Cabeçalho e Logo --- */
+header {
+    background-color: var(--surface-color);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: 45px;
+    height: 45px;
+    background-color: #000;
+    color: #8CC84B; /* Verde NodeJS */
+    font-size: 1.4rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header h1 {
+    color: var(--text-color);
+    font-size: 1.8rem;
+}
+
+header h1 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- Navegação --- */
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-button {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.nav-button:hover {
+    opacity: 0.9;
+}
+
+/* --- Seletor de Tema --- */
+.theme-switcher {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.theme-switcher label {
+    margin-right: 0.5rem;
+}
+
+#theme-select {
+    padding: 0.4rem;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+/* --- Conteúdo Principal --- */
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* --- Formulário de Novo Post --- */
+.new-post-section {
+    background-color: var(--surface-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+}
+
+.new-post-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover {
+    opacity: 0.9;
+}
+
+/* --- Seção de Posts --- */
+.posts-section h2 {
+    margin-bottom: 1.5rem;
+}
+
+.post {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.post-header h3 {
+    color: var(--link-color);
+    margin-bottom: 0.25rem;
+}
+
+.post-author {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+}
+
+.post-body {
+    margin-bottom: 1rem;
+}
+
+.post-footer {
+    text-align: right;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* --- Página Sobre --- */
+.about-section {
+    background-color: var(--surface-color);
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.about-section h2, .about-section h3 {
+    color: var(--primary-color);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.about-section p {
+    margin-bottom: 1rem;
+}
+
+.team-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.team-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.team-list li:last-child {
+    border-bottom: none;
+}
+
+/* --- Rodapé --- */
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
+}
