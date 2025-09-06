@@ -33,14 +33,14 @@
         <section class="posts-section">
             <h2>Publicações Recentes</h2>
             <div id="posts-container">
-                <!-- Posts de Mockup sobre Node.js -->
+                <!-- Posts Explicativos sobre Node.js -->
                 <article class="post">
                     <div class="post-header">
-                        <h3>O que é o Event Loop do Node.js?</h3>
-                        <span class="post-author">por CuriosoDoCallback</span>
+                        <h3>Entendendo o Event Loop</h3>
+                        <span class="post-author">por Ana Dev</span>
                     </div>
                     <p class="post-body">
-                        Sempre ouço falar que o Node.js é "single-threaded" mas lida com muitas conexões por causa do Event Loop. Alguém pode me explicar de forma simples como ele funciona e por que não bloqueia?
+                        O Event Loop é o coração do modelo de concorrência do Node.js. Ele permite que o Node.js execute operações de I/O (entrada/saída) de forma não-bloqueante, mesmo sendo single-thread. Funciona assim: tarefas que demoram (como ler um arquivo ou fazer uma chamada de API) são delegadas ao sistema. Enquanto elas não terminam, o Node.js fica livre para executar outras tarefas. Quando a tarefa demorada é concluída, seu callback (função de retorno) é colocado em uma fila para ser executado pelo Event Loop.
                     </p>
                     <div class="post-footer">
                         <span class="post-date">06 de Setembro de 2025</span>
@@ -49,24 +49,11 @@
 
                 <article class="post">
                     <div class="post-header">
-                        <h3>Express.js vs. Fastify: Qual usar em 2025?</h3>
-                        <span class="post-author">por ArquitetoDeAPI</span>
+                        <h3>O que são Módulos em Node.js?</h3>
+                        <span class="post-author">por Israel Ribeiro</span>
                     </div>
                     <p class="post-body">
-                        Estou começando um novo projeto de API e estou em dúvida entre usar o bom e velho Express ou o mais moderno Fastify, que promete mais performance. Quais são os prós e contras de cada um na prática?
-                    </p>
-                    <div class="post-footer">
-                        <span class="post-date">06 de Setembro de 2025</span>
-                    </div>
-                </article>
-
-                <article class="post">
-                    <div class="post-header">
-                        <h3>Dica: Usando o módulo `fs` para ler arquivos</h3>
-                        <span class="post-author">por MestreDosArquivos</span>
-                    </div>
-                    <p class="post-body">
-                        Para quem não sabe, o Node.js tem um módulo nativo chamado `fs` (File System) que é extremamente poderoso. Um exemplo simples para ler um arquivo de texto de forma assíncrona é: `fs.readFile('meuarquivo.txt', 'utf8', (err, data) => { ... });`
+                        Módulos são blocos de código reutilizáveis que encapsulam funcionalidades relacionadas. Em Node.js, cada arquivo é tratado como um módulo. Para usar a funcionalidade de um módulo em outro, você usa `require()` (no padrão CommonJS) ou `import` (no padrão ES Modules). Para expor funcionalidades de um módulo, você usa `module.exports` ou `exports`. Isso ajuda a organizar o código, evita a poluição do escopo global e torna a manutenção muito mais fácil.
                     </p>
                     <div class="post-footer">
                         <span class="post-date">05 de Setembro de 2025</span>
@@ -75,11 +62,11 @@
 
                  <article class="post">
                     <div class="post-header">
-                        <h3>Como gerenciar variáveis de ambiente com `dotenv`</h3>
-                        <span class="post-author">por SegurancaEmPrimeiro</span>
+                        <h3>NPM: O Gerenciador de Pacotes do Node</h3>
+                        <span class="post-author">por Vinicius Klein</span>
                     </div>
                     <p class="post-body">
-                        Uma dica de segurança essencial: nunca coloque senhas ou chaves de API direto no código! Usem um arquivo `.env` e o pacote `dotenv` para carregar essas variáveis no seu ambiente. É super simples de configurar: `require('dotenv').config()`
+                        NPM (Node Package Manager) é a ferramenta padrão que vem com o Node.js para gerenciar pacotes (bibliotecas de código) de terceiros. Com ele, você pode instalar, atualizar e remover pacotes facilmente através do terminal (ex: `npm install express`). O arquivo `package.json` em seu projeto lista todas as dependências e seus scripts, permitindo que outros desenvolvedores recriem o ambiente do projeto de forma idêntica com um simples `npm install`.
                     </p>
                     <div class="post-footer">
                         <span class="post-date">04 de Setembro de 2025</span>
@@ -88,12 +75,11 @@
 
                 <article class="post">
                     <div class="post-header">
-                        <h3>Dúvida sobre JavaScript Assíncrono</h3>
+                        <h3>Async/Await: Açúcar Sintático para Promises</h3>
                         <span class="post-author">por Ana Dev</span>
                     </div>
                     <p class="post-body">
-                        Olá, pessoal! Alguém poderia me explicar a diferença entre `async/await` e `.then()` com exemplos práticos? 
-                        Estou começando e gostaria de entender quando usar cada um.
+                        `async/await` é uma forma mais limpa e legível de trabalhar com código assíncrono em JavaScript, construída sobre Promises. Uma função declarada com `async` sempre retorna uma Promise. Dentro dela, você pode usar a palavra-chave `await` antes de uma função que retorna uma Promise. Isso fará com que a execução da função `async` pause até que a Promise seja resolvida, mas sem bloquear a thread principal do Node.js. O resultado é um código que parece síncrono, mas na verdade é assíncrono e muito mais fácil de ler do que cadeias de `.then()`.
                     </p>
                     <div class="post-footer">
                         <span class="post-date">03 de Setembro de 2025</span>
@@ -106,6 +92,14 @@
     <footer>
         <p>&copy; 2025 KnodeJS Fórum. Construído para a comunidade.</p>
     </footer>
+
+    <!-- Estrutura do Modal -->
+    <div id="post-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div id="modal-post-content"></div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
