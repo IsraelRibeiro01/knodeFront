@@ -79,4 +79,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Inicialização ---
     loadSavedTheme();
+
+    // --- Lógica da Barra de Pesquisa (Só na página index.html) ---
+    const searchBar = document.getElementById('search-bar');
+    if (searchBar && postsContainer) {
+        searchBar.addEventListener('input', () => {
+            const searchTerm = searchBar.value.toLowerCase();
+            const allPosts = postsContainer.querySelectorAll('.post');
+
+            allPosts.forEach(post => {
+                const title = post.querySelector('h3').textContent.toLowerCase();
+                const author = post.querySelector('.post-author').textContent.toLowerCase();
+                const body = post.querySelector('.post-body').textContent.toLowerCase();
+
+                if (title.includes(searchTerm) || author.includes(searchTerm) || body.includes(searchTerm)) {
+                    post.style.display = 'block';
+                } else {
+                    post.style.display = 'none';
+                }
+            });
+        });
+    }
 });

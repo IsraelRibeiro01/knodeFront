@@ -163,6 +163,26 @@ main {
     padding: 0 1rem;
 }
 
+/* --- Barra de Pesquisa --- */
+.search-section {
+    margin-bottom: 2rem;
+}
+
+#search-bar {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#search-bar::placeholder {
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
 /* --- Formulário de Novo Post --- */
 .new-post-section {
     background-color: var(--surface-color);
